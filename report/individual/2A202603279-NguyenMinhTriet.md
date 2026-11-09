@@ -1,13 +1,13 @@
 # Báo cáo cá nhân — Ngày 2 Object Detection
 
-Đổi tên file theo `MSSV_HoTen.md`, ví dụ `20241234_NguyenVanAn.md`. Điền kết quả thật, xóa dòng hướng dẫn khi nộp. Xem [quy định nộp](../../SUBMISSION.md).
+Xem [quy định nộp](../../SUBMISSION.md).
 
 ## 1. Thông tin học viên
 
-- Họ tên:
-- MSSV:
-- Email:
-- Lớp:
+- Họ tên: Nguyễn Minh Triết  
+- MSSV:2A202603279
+- Email: benny.nee0512@gmail.com
+- Lớp: E403
 - Link repo bài làm:
 - Link Colab đã chạy:
 
