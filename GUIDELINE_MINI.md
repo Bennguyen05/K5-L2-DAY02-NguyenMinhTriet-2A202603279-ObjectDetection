@@ -7,7 +7,7 @@
 | Lớp | Định nghĩa của bạn | Ví dụ/điểm phân biệt |
 | --- | --- | --- |
 | `car` |Xe con chở người, 4-7 chỗ, thân kín | Sedan, hatchback, SUV/crossover, coupe, taxi|
-| `truck` |Xe chở hàng có cabin tách biệt với thùng hàng, hoặc có thùng đặc biệt. |Xe tải các cỡ, xe bán tải, xe ben, xe bồn, đầu kéo |
+| `truck` |Xe chở hàng có cabin tách biệt với thùng hàng, hoặc có thùng đặc biệt. |Xe tải các cỡ, xe ben, xe bồn, đầu kéo |
 | `bus` |Xe chở khách cỡ lớn, thân dài, nhiều cửa sổ dọc thân, trên 16 chỗ. |Xe buýt thành phố, xe khách đường dài, xe đưa đón công ty cỡ lớn. |
 | `van` |Xe thân hộp liền khối, chở hàng nhẹ hoặc 7-16 khách. |Dáng hộp, mui cao, thường ít cửa sổ bên hông |
 
