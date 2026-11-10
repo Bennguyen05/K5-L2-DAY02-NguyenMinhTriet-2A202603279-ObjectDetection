@@ -50,6 +50,7 @@ https://github.com/Bennguyen05/K5-L2-DAY02-NguyenMinhTriet-2A202603279-ObjectDet
 | Recall |0.246 |
 | mAP50 |0.276 |
 | mAP50–95 |0.200 |
+
 https://github.com/Bennguyen05/K5-L2-DAY02-NguyenMinhTriet-2A202603279-ObjectDetection/tree/main/report/individual/assets/eval_predictions/visuals
 https://github.com/Bennguyen05/K5-L2-DAY02-NguyenMinhTriet-2A202603279-ObjectDetection/tree/main/report/individual/assets/yolo26_runs
 
