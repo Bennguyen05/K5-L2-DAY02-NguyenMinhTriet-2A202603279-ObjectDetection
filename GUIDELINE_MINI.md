@@ -22,6 +22,6 @@
 
 | Ảnh | Tình huống | Quyết định cuối | Lý do theo schema |
 | --- | --- | --- | --- |
-| `drive_...` | | | |
-| `drive_...` | | | |
-| `drive_...` | | | |
+| `drive_001` |Một car chen trước một xe van, xe còn lại bị cột đèn che một phần|Không gán |Hai xe chồng nhau thì mỗi xe một box trên phần nhìn thấy. Riêng xe van chỉ còn lộ một phần nhỏ, không chắc là van, car hay bus nên không tự đoán, ghi edge case và hỏi Lab Coach |
+| `drive_006` |Góc dưới bên phải chỉ lộ một đoạn ngắn của xe, bị rìa ảnh cắt | Không gán|Chỉ còn mảnh rất nhỏ, không xác định chắc lớp thì không tự đoán, ghi vào mini guideline và hỏi. Nếu thấy rõ lớp thì box phải chạm đúng rìa ảnh |
+| `drive_010` |Xe ở góc trên bên phải quá xa, quá nhỏ để nhận biết|Không gán |Không xác định chắc được lớp thì không tự đoán, ghi lại để hỏi. |
