@@ -36,7 +36,7 @@ Dẫn tới [GUIDELINE_MINI.md](../../GUIDELINE_MINI.md). Tóm tắt ba ca mơ h
 | mean_iou_of_matches |0.8671 |0.8479 |
 | passed |false |false |
 
-Dẫn tới `outputs/annotation_evaluation.json` trong repo. Nếu rework, ghi ảnh, lỗi đã kiểm, quyết định sửa/giữ và lý do. Không suy nguyên nhân chỉ từ FP/FN. Không có rework thì ghi rõ.
+https://github.com/Bennguyen05/K5-L2-DAY02-NguyenMinhTriet-2A202603279-ObjectDetection/blob/main/outputs/annotation_evaluation.json
 
 ## 5. Kết quả YOLO
 
@@ -50,15 +50,16 @@ Dẫn tới `outputs/annotation_evaluation.json` trong repo. Nếu rework, ghi �
 | Recall |0.246 |
 | mAP50 |0.276 |
 | mAP50–95 |0.200 |
-
-Đặt cả 2 folder `assets/eval_predictions/` và `assets/yolo26_runs/` (giải nén từ `day2_colab_outputs.zip`) cạnh báo cáo và dẫn link tương đối. Không chỉ ghi số; chỉ ra ít nhất một ảnh và vật thể cụ thể.
+https://github.com/Bennguyen05/K5-L2-DAY02-NguyenMinhTriet-2A202603279-ObjectDetection/tree/main/report/individual/assets/eval_predictions/visuals
+https://github.com/Bennguyen05/K5-L2-DAY02-NguyenMinhTriet-2A202603279-ObjectDetection/tree/main/report/individual/assets/yolo26_runs
 
 Trả lời bốn câu hỏi cuối notebook (đã trả lời trong notebook):
 
-1. Lớp nào recall thấp nhất? Ảnh nào minh họa?
-2. Nếu mAP50 cao nhưng mAP50–95 thấp, cần kiểm điều gì trên box?
-3. Lỗi class nào có thể liên quan guideline? Dữ kiện nào hỗ trợ nhận xét?
+1. Lớp nào recall thấp nhất? Ảnh nào minh họa? bus: P = 0, R = 0, mAP50 = 0.017 (2 instance trong 2 ảnh eval). Tiếp theo là van (R 0.083), truck (R 0.20), và car cao nhất (R 0.70). Ở ảnh drive_051, gold có 1 xe bus ở góc trên bên phải ảnh (khoảng x = 0.83, y = 0.13). Đó là một xe thân hộp màu trắng, cao, nằm sát mép phải và gần các xe khác bị cắt bởi rìa ảnh. Model không đặt box đúng lên xe này ở ngưỡng conf 0.25; các box car gần nhất lệch sang mép phải. Đây là một ca bỏ sót (FN) của lớp bus. Nguyên nhân có thể là xe nằm sát rìa, hình dạng thân hộp khó phân biệt giữa bus, van và truck, và lớp bus có rất ít mẫu train, kèm nhãn train của lớp này chưa chắc nhất quán.
+2. Nếu mAP50 cao nhưng mAP50–95 thấp, cần kiểm điều gì trên box? Khi mAP50 cao mà mAP50-95 thấp, box đã chồng đúng lên xe nhưng không đủ khít. Có thể người gán nhãn đã đặt lệch cạnh hoặc dư/hụt vài pixel nên IoU rơi xuống dưới các ngưỡng cao như 0.75-0.95. Đây là lỗi về độ chính xác của box, không phải lỗi nhận diện.
+3. Lỗi class nào có thể liên quan guideline? Dữ kiện nào hỗ trợ nhận xét? Gold eval có 12 van và 2 bus, trong khi model dự đoán 13 bus và 9 van. bus có P/R = 0, van có R 0.083, có thể là do đã nhầm lẫn thứ tự ID của bus/van trong train set. truck: chỉ 16 box trong train, R 0.20, chủ yếu là thiếu dữ liệu. Có thể nhầm với van khi tiêu chí “cabin tách khỏi thùng” áp dụng chưa đủ. car: lỗi chủ yếu là bỏ sót.
 4. Vì sao không dùng 10 ảnh eval để train? Vai trò validation của chúng trong notebook là gì?
+Tập eval phải là dữ liệu model chưa từng học để đo khả năng tổng quát hóa. Nếu đưa vào train, model có thể ghi nhớ các ảnh đó, mAP tăng giả và không còn phản ánh chất lượng trên ảnh mới.
 
 ## 6. Khó khăn và cách xử lý
 
